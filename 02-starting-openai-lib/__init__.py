@@ -10,23 +10,41 @@ _ = load_dotenv(find_dotenv())
 
 client = openai.Client()
 
+def print_chat(message, end=''):
+    print(message, end=end)
+
 def get_user_message():
     user_message = input('["0" para sair] User: ')
 
     return { 'message': { 'role': 'user', 'content': user_message } }
 
 def get_gpt_response(messages, model=CHAT_GPT_MODEL, max_tokens=MAX_TOKENS, temperature=TEMPERATURE):
-    chat_response = client.chat.completions.create(
+    chat_response_stream = client.chat.completions.create(
         model=model,
         max_tokens=max_tokens,
         temperature=temperature,
-        messages=messages
+        messages=messages,
+        stream=True
     )
 
-    chat_message = chat_response.choices[0].message.model_dump(exclude_none=True)
+    chat_message_text = ''
+
+    for chat_response in chat_response_stream:
+        chat_delta_content = chat_response.choices[0].delta.content
+
+        if chat_delta_content == None: continue
+
+        chat_message_text += chat_delta_content
+
+        print_chat(chat_delta_content)
+
+    print_chat('', end='\n')
+
+    chat_message = { 'role': 'assistant', 'content': chat_message_text }
 
     return { 'message': chat_message, 'usage': chat_response.usage }
 
+'''
 def get_usage(usages=[]):
     result = { 'prompt': 0, 'completion': 0, 'total': 0 }
 
@@ -35,9 +53,8 @@ def get_usage(usages=[]):
         result['completion'] += usage.completion_tokens
         result['total'] += usage.total_tokens
 
-    print(f'===> result: {result}')
-
     return result
+'''
 
 def execute_chat():
     chat_messages = []
@@ -56,12 +73,12 @@ def execute_chat():
 
         chat_usages.append(chat_response['usage'])
 
-        print(f'Chat: {chat_response['message']['content']}')
-
     return {
         'messages': chat_messages,
-        'usages': chat_usages,
-        'usage_totals': get_usage(usages=chat_usages),
+        # 'usage_totals': get_usage(usages=chat_usages),
+        'usages': chat_usages
     }
 
-execute_chat()
+chat_result = execute_chat()
+
+print(f'=======> chat_result: {chat_result}')
