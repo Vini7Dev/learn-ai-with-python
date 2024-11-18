@@ -1,7 +1,8 @@
 from dotenv import dotenv_values, find_dotenv
 
-from src.chat_stream import execute_chat
+# from src.chat_stream import execute_chat
 # from src.temperature_chat import execute_chat
+from src.finance_chat_bot import execute_chat
 
 env_vars = dotenv_values(find_dotenv())
 

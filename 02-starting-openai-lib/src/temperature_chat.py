@@ -49,9 +49,6 @@ available_tool_functions = {
 
 # Execution
 
-def print_chat(message, end=''):
-    print(message, end=end)
-
 def get_user_message(messages):
     user_message = input('["0" para sair] User: ')
 
@@ -60,7 +57,7 @@ def get_user_message(messages):
     return messages
 
 def get_gpt_response(messages, client):
-    chat_response_stream = client.chat.completions.create(
+    chat_response = client.chat.completions.create(
         model=CHAT_GPT_MODEL,
         max_tokens=MAX_TOKENS,
         temperature=TEMPERATURE,
@@ -70,9 +67,9 @@ def get_gpt_response(messages, client):
         #  stream=True,
     )
 
-    messages.append(chat_response_stream.choices[0].message)
+    messages.append(chat_response.choices[0].message)
 
-    tool_calls = chat_response_stream.choices[0].message.tool_calls
+    tool_calls = chat_response.choices[0].message.tool_calls
 
     if tool_calls:
         for tool_call in tool_calls:
@@ -93,7 +90,7 @@ def get_gpt_response(messages, client):
         return get_gpt_response(messages, client=client)
 
     messages.append({
-        'role': 'assistant', 'content': chat_response_stream.choices[0].message.content
+        'role': 'assistant', 'content': chat_response.choices[0].message.content
     })
 
     return messages
