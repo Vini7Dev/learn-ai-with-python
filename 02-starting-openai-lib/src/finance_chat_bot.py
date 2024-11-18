@@ -86,11 +86,11 @@ def add_gpt_message(messages, client):
         messages=messages,
     )
 
-    messages.append(chat_response.choices[0].message)
-
     tool_calls = chat_response.choices[0].message.tool_calls
 
     if (tool_calls):
+        messages.append(chat_response.choices[0].message)
+
         messages = add_tool_calls_messages(messages=messages, tool_calls=tool_calls)
 
         return add_gpt_message(messages=messages, client=client)

@@ -67,11 +67,11 @@ def get_gpt_response(messages, client):
         #  stream=True,
     )
 
-    messages.append(chat_response.choices[0].message)
-
     tool_calls = chat_response.choices[0].message.tool_calls
 
     if tool_calls:
+        messages.append(chat_response.choices[0].message)
+
         for tool_call in tool_calls:
             function_name = tool_call.function.name
             function_args = json.loads(tool_call.function.arguments)
