@@ -31,6 +31,7 @@ TOOLS = [{
 # Tools
 
 def get_finance_info(ticker, period):
+    ticker = ticker.replace('.SA', '')
     ticker_obj = yf.Ticker(f'{ticker}.SA')
     hist = ticker_obj.history(period=period)
     if (len(hist) > 30):
@@ -43,11 +44,6 @@ def get_finance_info(ticker, period):
 available_tool_functions = {
     'get_finance_info': get_finance_info,
 }
-
-# Utils
-
-def last_item(array):
-    return array[len(array) - 1]
 
 # Execution
 
@@ -109,10 +105,10 @@ def execute_chat(api_key):
     while True:
         chat_messages = add_user_message(messages=chat_messages)
 
-        if (last_item(chat_messages)['content'] == '0'): break
+        if (chat_messages[-1]['content'] == '0'): break
 
         chat_messages = add_gpt_message(messages=chat_messages, client=client)
 
-        print(f'Assistant: {last_item(chat_messages)['content']}')
+        print(f'Assistant: {chat_messages[-1]['content']}')
 
     return chat_messages
