@@ -1,9 +1,9 @@
 from dotenv import dotenv_values, find_dotenv
 
-# from src.chat_stream import execute_chat
-# from src.temperature_chat import execute_chat
-# from src.finance_chat_bot import execute_chat
-from src.fine_tuning import execute
+# from src.text_generation_scripts.chat_stream import execute_chat
+# from src.text_generation_scripts.temperature_chat import execute_chat
+# from src.text_generation_scripts.finance_chat_bot import execute_chat
+from src.text_generation_scripts.fine_tuning import execute
 
 env_vars = dotenv_values(find_dotenv())
 
