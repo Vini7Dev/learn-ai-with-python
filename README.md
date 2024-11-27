@@ -11,6 +11,8 @@ Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 
 ## 02 Starting OpenAI Lib
 
+> **Simple Chats**
+
 > Chat Stream: My Chat GPT
 
 > Temperature Chat: Chat Tools (calling APIs to give information to AI response)
@@ -18,3 +20,7 @@ Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 > Finance Chat: Chat Tools (calling APIs to give information to AI response)
 
 > Fine Tuning: Create models with sandarlization in the AI response messages
+
+> **Assistants API: OpenAI Ready-Made Tools**
+
+> Math Assistant: Code interpreter, to create and execute Python codes
