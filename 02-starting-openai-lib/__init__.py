@@ -7,7 +7,8 @@ from dotenv import dotenv_values, find_dotenv
 # from src.text_generation_scripts.use_fine_tuning import execute
 
 # from src.assistants_api.math_assistant import execute_assistant
-from src.assistants_api.finance_assistant import execute_assistant
+# from src.assistants_api.finance_assistant import execute_assistant
+from src.assistants_api.attendant_assistant import execute_assistant
 
 env_vars = dotenv_values(find_dotenv())
 
