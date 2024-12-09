@@ -6,7 +6,8 @@ from dotenv import dotenv_values, find_dotenv
 # from src.text_generation_scripts.fine_tuning import execute
 # from src.text_generation_scripts.use_fine_tuning import execute
 
-from src.assistants_api.math_assistant import execute_assistant
+# from src.assistants_api.math_assistant import execute_assistant
+from src.assistants_api.finance_assistant import execute_assistant
 
 env_vars = dotenv_values(find_dotenv())
 
@@ -34,6 +35,7 @@ use_fine_tuning_result = execute(api_key=env_vars.get('OPENAI_API_KEY'))
 print(f'===> use_fine_tuning_result: {use_fine_tuning_result}')
 '''
 
+'''
 result = execute_assistant(api_key=env_vars.get('OPENAI_API_KEY'))
 
 print(f'===> result status: {result['run'].status}')
@@ -45,3 +47,8 @@ for step in result['steps'].data[::-1]:
         for tool_call in step.step_details.tool_calls:
             print(f'=> tool call input: {tool_call.code_interpreter.input}')
             print(f'=> tool call outputs: {tool_call.code_interpreter.outputs}')
+'''
+
+result = execute_assistant(api_key=env_vars.get('OPENAI_API_KEY'))
+
+print(f'===> Result: {result}')
