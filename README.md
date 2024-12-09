@@ -27,4 +27,4 @@ Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 
 > Finance Assistant: Reading CSV file to made a finance analytics
 
->
+> Attendant Assistant: Reading PDFs to respond questions
