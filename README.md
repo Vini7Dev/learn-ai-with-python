@@ -32,3 +32,5 @@ Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 ### **Working with images:** DALL-E e GPT-Vision
 
 > Image Generator: Generate, edit and variate images with Dall-E
+
+> GPT Vision: Image analyzation

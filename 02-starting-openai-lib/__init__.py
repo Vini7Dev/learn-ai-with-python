@@ -10,7 +10,8 @@ from dotenv import dotenv_values, find_dotenv
 # from src.assistants_api.finance_assistant import execute_assistant
 # from src.assistants_api.attendant_assistant import execute_assistant
 
-from src.work_with_images.image_generator import execute
+# from src.work_with_images.image_generator import execute
+from src.work_with_images.analyze_images import execute
 
 env_vars = dotenv_values(find_dotenv())
 
@@ -60,7 +61,7 @@ print(f'===> Result: {result}')
 
 result = execute(
     api_key=env_vars.get('OPENAI_API_KEY'),
-    action='VARIATION',
+    action='LOCAL_IMAGE',
 )
 
 print(f'===> Result: {result}')
