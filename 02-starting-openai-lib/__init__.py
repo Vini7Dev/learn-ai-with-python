@@ -8,7 +8,9 @@ from dotenv import dotenv_values, find_dotenv
 
 # from src.assistants_api.math_assistant import execute_assistant
 # from src.assistants_api.finance_assistant import execute_assistant
-from src.assistants_api.attendant_assistant import execute_assistant
+# from src.assistants_api.attendant_assistant import execute_assistant
+
+from src.work_with_images.image_generator import execute
 
 env_vars = dotenv_values(find_dotenv())
 
@@ -50,6 +52,15 @@ for step in result['steps'].data[::-1]:
             print(f'=> tool call outputs: {tool_call.code_interpreter.outputs}')
 '''
 
+'''
 result = execute_assistant(api_key=env_vars.get('OPENAI_API_KEY'))
+
+print(f'===> Result: {result}')
+'''
+
+result = execute(
+    api_key=env_vars.get('OPENAI_API_KEY'),
+    action='VARIATION',
+)
 
 print(f'===> Result: {result}')
