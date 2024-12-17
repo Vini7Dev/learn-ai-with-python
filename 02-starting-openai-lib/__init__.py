@@ -11,7 +11,9 @@ from dotenv import dotenv_values, find_dotenv
 # from src.assistants_api.attendant_assistant import execute_assistant
 
 # from src.work_with_images.image_generator import execute
-from src.work_with_images.analyze_images import execute
+# from src.work_with_images.analyze_images import execute
+
+from src.audio_generation.audio_generation import execute
 
 env_vars = dotenv_values(find_dotenv())
 
@@ -59,9 +61,15 @@ result = execute_assistant(api_key=env_vars.get('OPENAI_API_KEY'))
 print(f'===> Result: {result}')
 '''
 
+'''
 result = execute(
     api_key=env_vars.get('OPENAI_API_KEY'),
     action='LOCAL_IMAGE',
 )
+
+print(f'===> Result: {result}')
+'''
+
+result = execute(api_key=env_vars.get('OPENAI_API_KEY'))
 
 print(f'===> Result: {result}')

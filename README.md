@@ -35,6 +35,6 @@ Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 
 > GPT Vision: Image analyzation
 
-### **Audio Transcription**
+### **Audio Generation and Transcription**
 
-
+> Audio Generation: Create audio by text (with or without stream)
