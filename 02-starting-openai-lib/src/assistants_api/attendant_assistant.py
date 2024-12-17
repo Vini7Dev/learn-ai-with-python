@@ -11,8 +11,8 @@ def execute_assistant(api_key: str):
     )
 
     files = [
-        'files/Explorando a API da OpenAI.pdf',
-        'files/Explorando o Universo das IAs com Hugging Face.pdf',
+        'src/files/assistants/Explorando a API da OpenAI.pdf',
+        'src/files/assistants/Explorando o Universo das IAs com Hugging Face.pdf',
     ]
 
     files_stream = [open(f, 'rb') for f in files]
@@ -91,7 +91,7 @@ def execute_assistant(api_key: str):
                 elif message.content[0].type == 'image_file':
                     file_id = message.content[0].image_file.file_id
                     image_data = client.files.content(file_id)
-                    with open(f'files/finance-assistent-{file_id}.png', 'wb') as f:
+                    with open(f'src/files/assistants/finance-assistent-{file_id}.png', 'wb') as f:
                         f.write(image_data.read())
                         print(f'Saved finance-assistent-{file_id}.png image!')
         except:
