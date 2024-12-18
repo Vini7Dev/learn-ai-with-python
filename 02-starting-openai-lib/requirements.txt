@@ -6,4 +6,9 @@ pandas
 matplotlib
 yfinance
 requests
+pyaudio
 Pillow
+SpeechRecognition
+sounddevice
+playsound==1.2.2
+wheel

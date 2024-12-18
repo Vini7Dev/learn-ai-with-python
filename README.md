@@ -40,3 +40,5 @@ Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 > Audio Generation: Create audio by text (with or without stream)
 
 > Audio Transcription: Extract text from audio
+
+> Voice Chat: Talking with AI
