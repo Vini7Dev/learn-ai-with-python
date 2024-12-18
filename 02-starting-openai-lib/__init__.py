@@ -13,7 +13,8 @@ from dotenv import dotenv_values, find_dotenv
 # from src.work_with_images.image_generator import execute
 # from src.work_with_images.analyze_images import execute
 
-from src.audio_generation.audio_generation import execute
+# from src.audio_generation.audio_generation import execute
+from src.audio_generation.audio_transcription import execute
 
 env_vars = dotenv_values(find_dotenv())
 
