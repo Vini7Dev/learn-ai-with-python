@@ -10,7 +10,14 @@ st.set_page_config(
     page_title='spotify songs',
 )
 
-csv_data = pd.read_csv('data/01 Spotify.csv')
+@st.cache_data
+def load_data():
+    csv_data = pd.read_csv('data/01 Spotify.csv')
+    time.sleep(5) # Heavy processing
+    return csv_data
+
+csv_data = load_data()
+st.session_state['csv_spotify'] = csv_data
 
 # st.write('Hello World!')
 # st.write(csv_data[csv_data['Stream'] > 1000000000])
