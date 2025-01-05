@@ -1,4 +1,4 @@
-# learn-ai-with-python
+# Learn AI With Python
 Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 
 ## 01 Setup Project
@@ -42,3 +42,26 @@ Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 > Audio Transcription: Extract text from audio
 
 > Voice Chat: Talking with AI
+
+## 03 Streamlit Web Apps
+
+> Streamlit Docs: https://docs.streamlit.io/
+
+> To Start Web Server:
+
+```shell
+python -m streamlit run .\__init__.py
+```
+
+> Custom Components (Examples)
+
+```shell
+pip install streamlit-extras
+pip install streamlit-elements
+pip install streamlit-image-annotation
+pip install graph-app-kit
+pip install streamlit-player
+pip install streamlit-login-auth-ui
+pip install streamlit-drawable-canvas
+...
+```
