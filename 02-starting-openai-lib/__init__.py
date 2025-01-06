@@ -20,6 +20,14 @@ from src.audio_generation.voice_chat import execute
 env_vars = dotenv_values(find_dotenv())
 
 '''
+# OU
+
+_ = load_dotenv(find_dotenv())
+
+openai_key = os.getenv('OPENAI_API_KEY')
+'''
+
+'''
 chat_result = execute_chat(
     api_key=env_vars.get('OPENAI_API_KEY')
 )

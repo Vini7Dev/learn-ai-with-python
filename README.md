@@ -65,3 +65,7 @@ pip install streamlit-login-auth-ui
 pip install streamlit-drawable-canvas
 ...
 ```
+
+## 04 Asimov Chatbot With Streamlit
+
+> Streamlit Project with Chat GPT
