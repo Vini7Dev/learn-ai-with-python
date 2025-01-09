@@ -6,11 +6,22 @@ import openai
 import streamlit as st
 from unidecode import unidecode
 
+CONFIGS_FOLDER = Path(__file__).parent / 'configs'
+CONFIGS_FOLDER.mkdir(exist_ok=True)
 MESSAGES_FOLDER = Path(__file__).parent / 'messages'
 MESSAGES_FOLDER.mkdir(exist_ok=True)
 CACHE_MESSAGE_NAMES = {}
 
-openai_key = 'API_KEY_HERE'
+def save_api_key(api_key):
+    with open(CONFIGS_FOLDER / 'api_key', 'wb') as f:
+        pickle.dump(api_key, f)
+
+def read_api_key():
+    if (CONFIGS_FOLDER / 'api_key').exists():
+        with open(CONFIGS_FOLDER / 'api_key', 'rb') as f:
+            return pickle.load(f)
+    else:
+        return ''
 
 def get_response_stream(messages, api_key, model='gpt-3.5-turbo', temperature=0):
     openai.api_key = api_key
@@ -73,6 +84,10 @@ def inicialization():
         st.session_state.messages = []
     if not 'current_chat' in st.session_state:
         st.session_state.current_chat = ''
+    if not 'openai_model' in st.session_state:
+        st.session_state.openai_model = 'gpt-3.5-turbo'
+    if not 'openai_key' in st.session_state:
+        st.session_state.openai_key = read_api_key()
 
 def main_page():
     messages = load_messages(st.session_state.messages)
@@ -85,17 +100,24 @@ def main_page():
 
     prompt = st.chat_input('Fale com o chat')
     if prompt:
+        if st.session_state.openai_key == '':
+            st.error('Adicione uma API Key na aba de configurações')
+            return
+
         new_message = { 'role': 'user', 'content': prompt }
         chat = st.chat_message(new_message['role'])
         chat.markdown(new_message['content'])
         messages.append(new_message)
 
-    if len(messages) > 0:
         chat = st.chat_message('assistant')
         placeholder = chat.empty()
         placeholder.markdown('▌')
         full_response = ''
-        response_stream = get_response_stream(messages=messages, api_key=openai_key)
+        response_stream = get_response_stream(
+            messages=messages,
+            api_key=st.session_state.openai_key,
+            model=st.session_state.openai_model,
+        )
         for response in response_stream:
             full_response += response.choices[0].delta.content or ''
             placeholder.markdown(f'{full_response}▌')
@@ -130,17 +152,27 @@ def tab_chats(tab):
         chat_file_names += '...'
     for file_name in chat_file_names:
         message_name = unconvert_file_name(file_name).capitalize()
-        tab.button(unconvert_file_name(file_name).capitalize(),
+        tab.button(message_name,
                 on_click=select_chat,
                 args=(file_name, ),
                 disabled=file_name==st.session_state.current_chat,
                 use_container_width=True)
+
+def tab_configs(tab):
+    openai_model = tab.selectbox('Selecione o modelo', ['gpt-3.5-turbo', 'gpt-4'])
+    st.session_state.openai_model = openai_model
+    openai_key = tab.text_input('Adicione a sua API Key da OpenAI', st.session_state.openai_key)
+    if openai_key != st.session_state.openai_key:
+        st.session_state.openai_key = openai_key
+        save_api_key(openai_key)
+        st.success('Chave salva com sucesso!')
 
 def main():
     inicialization()
     main_page()
     tab1, tab2 = st.sidebar.tabs(['Conversas', 'Configurações'])
     tab_chats(tab1)
+    tab_configs(tab2)
 
 if __name__ == '__main__':
     main()
