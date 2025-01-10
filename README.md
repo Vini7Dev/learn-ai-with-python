@@ -68,4 +68,8 @@ pip install streamlit-drawable-canvas
 
 ## 04 Asimov Chatbot With Streamlit
 
-> Streamlit Project with Chat GPT
+> Streamlit Project with Chat GPT: Chat Completions Model
+
+## 05 Asimov Audio Transcripts
+
+> Streamlit Project with OpenAI Audios: With Whisper Model
