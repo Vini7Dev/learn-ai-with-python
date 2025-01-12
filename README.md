@@ -76,4 +76,6 @@ pip install streamlit-drawable-canvas
 
 ## 06 Hugging Face - The AI Comunity
 
-> Transformers Lib with Fill Mask Test Model
+> Transformers Lib
+
+> Fill Mask Models

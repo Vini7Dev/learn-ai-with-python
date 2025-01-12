@@ -1,3 +1,3 @@
-from scripts.fill_mask_test_model import execute
+from scripts.fill_mask_model import execute
 
 execute()
