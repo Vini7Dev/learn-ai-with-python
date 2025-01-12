@@ -73,3 +73,7 @@ pip install streamlit-drawable-canvas
 ## 05 Asimov Audio Transcripts
 
 > Streamlit Project with OpenAI Audios: With Whisper Model
+
+## 06 Hugging Face - The AI Comunity
+
+> Transformers Lib with Fill Mask Test Model
