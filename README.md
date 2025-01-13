@@ -83,3 +83,5 @@ pip install streamlit-drawable-canvas
 > Tokenizers: Tokens, Inputs and Outputs
 
 > Inference API: Working with very largest models
+
+> Restricted Models: Authentication and Terms of Use
