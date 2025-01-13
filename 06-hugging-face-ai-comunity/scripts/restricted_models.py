@@ -1,7 +1,10 @@
 import os
 import requests
 
+from dotenv import load_dotenv, find_dotenv
 # from transformers import pipeline
+
+_ = load_dotenv(find_dotenv())
 
 def execute():
     # model = pipeline('text-generation', model='google/gemma-7b-it')

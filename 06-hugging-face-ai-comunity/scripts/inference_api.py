@@ -1,7 +1,10 @@
 import os
 import requests
 
+from dotenv import load_dotenv, find_dotenv
 from transformers import AutoTokenizer
+
+_ = load_dotenv(find_dotenv())
 
 def execute():
     model = 'mistralai/Mixtral-8x7B-Instruct-v0.1'
@@ -9,16 +12,7 @@ def execute():
     hugging_face_token = os.getenv('HUGGING_FACE_TOKEN')
     headers = {'Authorization': f'Bearer {hugging_face_token}'}
 
-    '''
-    chat = [
-        { 'role': 'user', 'content': 'Olá, qual o seu nome?' },
-        { 'role': 'assistant', 'content': 'Olá, eu sou um modelo de AI. Como posso ajudar?' },
-        { 'role': 'user', 'content': 'Gostaria de apresnder Python. Você tem alguma dica?' },
-    ]
-    '''
-
     chat = []
-
     while True:
         user_message = input('(Q = Sair) Usuário: ')
         chat.append({'role': 'user', 'content': user_message})
