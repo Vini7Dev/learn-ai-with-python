@@ -89,3 +89,5 @@ pip install streamlit-drawable-canvas
 > Translation Models
 
 > Abstract Models
+
+> Text Classification Models
