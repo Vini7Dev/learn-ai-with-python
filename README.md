@@ -87,3 +87,5 @@ pip install streamlit-drawable-canvas
 > Restricted Models: Authentication and Terms of Use
 
 > Translation Models
+
+> Abstract Models
