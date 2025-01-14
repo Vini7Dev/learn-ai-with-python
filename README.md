@@ -85,3 +85,5 @@ pip install streamlit-drawable-canvas
 > Inference API: Working with very largest models
 
 > Restricted Models: Authentication and Terms of Use
+
+> Translation Models

@@ -2,8 +2,9 @@
 # from scripts.tokenizer_transformers import execute
 # from scripts.text_generation import execute
 # from scripts.inference_api import execute
-from scripts.restricted_models import execute
+# from scripts.restricted_models import execute
+from scripts.translation_model import execute
 
-from projects.multiple_chatbots import execute
+# from projects.multiple_chatbots import execute
 
 execute()
