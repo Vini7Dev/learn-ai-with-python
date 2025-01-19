@@ -1,6 +1,7 @@
 transformers
 # torch-2.5.1+cu118.dist-info
 huggingface_hub[cli]
+datasets
 python-dotenv
 streamlit
 sentencepiece
