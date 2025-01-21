@@ -97,8 +97,12 @@ pip install streamlit-drawable-canvas
 ## 07 AI APPs With LangChain Framework
 
 > Models
-  - LLMs
-  - Chat Models
-    - Prompt Few-Shot
-  - Debug
-  - Response Caching
+    - LLMs
+    - Chat Models
+        - Prompt Few-Shot
+    - Debug
+    - Response Caching
+
+> Prompt Templates
+
+> Output Parsers
