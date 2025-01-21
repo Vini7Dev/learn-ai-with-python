@@ -93,3 +93,9 @@ pip install streamlit-drawable-canvas
 > Text Classification Models
 
 > Datasets and Spaces
+
+## 07 AI APPs With LangChain Framework
+
+> Models
+  - LLMs
+  - Chat Models
