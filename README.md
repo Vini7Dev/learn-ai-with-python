@@ -99,3 +99,6 @@ pip install streamlit-drawable-canvas
 > Models
   - LLMs
   - Chat Models
+    - Prompt Few-Shot
+  - Debug
+  - Response Caching
