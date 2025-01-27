@@ -18,7 +18,13 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.memories.memory_conversation_buffer import execute
 # from scripts.memories.memory_conversation_buffer_window import execute
 # from scripts.memories.memory_conversation_token_buffer import execute
-from scripts.memories.memory_conversation_summary_buffer import execute
+# from scripts.memories.memory_conversation_summary_buffer import execute
+
+# from scripts.chains.conversation_chain import execute
+# from scripts.chains.llm_chain import execute
+# from scripts.chains.simple_sequential_chain import execute
+# from scripts.chains.sequential_chain import execute
+from scripts.chains.complex_prompt_sequential_chain import execute
 
 _ = load_dotenv(find_dotenv())
 

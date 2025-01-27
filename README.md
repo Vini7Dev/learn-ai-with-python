@@ -109,3 +109,7 @@ pip install streamlit-drawable-canvas
 
 > Chain
     - Memory: History for model conversations
+    - Break problems down into smaller problems
+    - Multiple chains to solve a problem of one application
+    - Each chain has a responsibility
+    - Simplify complex prompts
