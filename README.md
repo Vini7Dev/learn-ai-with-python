@@ -106,3 +106,6 @@ pip install streamlit-drawable-canvas
 > Prompt Templates
 
 > Output Parsers
+
+> Chain
+    - Memory: History for model conversations
