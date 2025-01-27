@@ -117,3 +117,10 @@ pip install streamlit-drawable-canvas
 
 > Router Chains
     - Router that directs the query to the ideal chain
+
+> RAG: Retrieval Argumented Generation
+    - Document Loading: Provide personalized information to be used (texts, pdf, svg, etc...)
+    - Document Splitting: Split data into different parts with a smart method
+    - Empedding: Parse the text parts to a float (number) array
+    - Vector store: Data base of number vectors
+    - Retrieval: Semantic search in the vector store by prompt

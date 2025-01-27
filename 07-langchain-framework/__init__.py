@@ -26,7 +26,15 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.chains.sequential_chain import execute
 # from scripts.chains.complex_prompt_sequential_chain import execute
 
-from scripts.chain_router.router_chains import execute
+# from scripts.chain_router.router_chains import execute
+
+# from scripts.rag.a_document_loaders.load_pdf import execute
+# from scripts.rag.a_document_loaders.load_csv import execute
+# from scripts.rag.a_document_loaders.load_from_youtube import execute
+# from scripts.rag.a_document_loaders.load_from_website import execute
+# from scripts.rag.a_document_loaders.load_from_notion import execute
+
+from scripts.rag.b_text_splitters.text_splitter import execute
 
 _ = load_dotenv(find_dotenv())
 
