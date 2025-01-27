@@ -24,7 +24,9 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.chains.llm_chain import execute
 # from scripts.chains.simple_sequential_chain import execute
 # from scripts.chains.sequential_chain import execute
-from scripts.chains.complex_prompt_sequential_chain import execute
+# from scripts.chains.complex_prompt_sequential_chain import execute
+
+from scripts.chain_router.router_chains import execute
 
 _ = load_dotenv(find_dotenv())
 
