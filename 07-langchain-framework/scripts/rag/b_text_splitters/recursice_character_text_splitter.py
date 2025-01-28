@@ -8,7 +8,7 @@ def execute():
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
         # Priority separators order
-        separators=['\n\n', '\n', ' ', ''],
+        separators=['\n\n', '\n', '.', ' ', ''],
     )
 
     text = '''

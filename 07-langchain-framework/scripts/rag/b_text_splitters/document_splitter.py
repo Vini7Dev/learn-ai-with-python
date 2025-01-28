@@ -9,13 +9,12 @@ def execute():
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
         # Priority separators order
-        separators=['\n\n', '\n', ' ', ''],
+        separators=['\n\n', '\n', '.', ' ', ''],
     )
 
     document_path = 'files/Explorando o Universo das IAs com Hugging Face.pdf'
 
     loader = PyPDFLoader(document_path)
-
     documents = loader.load()
 
     splits = char_splitter.split_documents(documents)

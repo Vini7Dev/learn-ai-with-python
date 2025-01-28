@@ -3,9 +3,9 @@ import numpy as np
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 
 def execute():
-    embedding_model = HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2')
+    embeddings_model = HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2')
 
-    embeddings = embedding_model.embed_documents([
+    embeddings = embeddings_model.embed_documents([
         'Eu gosto de cachorros',
         'Eu gosto de animais',
         'O tempo está ruim lá fora',
