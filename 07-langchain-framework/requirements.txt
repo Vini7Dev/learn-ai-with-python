@@ -4,6 +4,7 @@ langchain-community
 langchain-openai
 langchain_chroma
 faiss-cpu
+lark
 openai
 huggingface_hub
 transformers

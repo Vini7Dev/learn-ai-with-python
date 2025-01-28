@@ -3,7 +3,7 @@ from langchain_community.document_loaders.pdf import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai.embeddings import OpenAIEmbeddings
 
-def execute(action = 'GET'):
+def execute(action = 'SEARCH'):
     store_directory = 'files/faiss_vector_store'
 
     embeddings_model = OpenAIEmbeddings(model='text-embedding-ada-002')

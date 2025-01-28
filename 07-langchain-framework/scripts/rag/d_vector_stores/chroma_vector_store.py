@@ -3,7 +3,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_chroma import Chroma
 
-def execute(action = 'GET'):
+def execute(action = 'SEARCH'):
     store_directory = 'files/chrome_vector_store'
 
     embeddings_model = OpenAIEmbeddings(model='text-embedding-ada-002')

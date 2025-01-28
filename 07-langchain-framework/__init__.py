@@ -44,7 +44,10 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.rag.c_embeddings.hugging_face_embedding import execute
 
 # from scripts.rag.d_vector_stores.chroma_vector_store import execute
-from scripts.rag.d_vector_stores.faiss_vector_storage import execute
+# from scripts.rag.d_vector_stores.faiss_vector_storage import execute
+
+# from scripts.rag.e_retrieval.retrieval import execute
+from scripts.rag.e_retrieval.retrieval_with_llms import execute
 
 _ = load_dotenv(find_dotenv())
 
