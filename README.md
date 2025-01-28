@@ -119,8 +119,8 @@ pip install streamlit-drawable-canvas
     - Router that directs the query to the ideal chain
 
 > RAG: Retrieval Argumented Generation
-    - Document Loading: Provide personalized information to be used (texts, pdf, svg, etc...)
-    - Document Splitting: Split data into different parts with a smart method
-    - Empedding: Parse the text parts to a float (number) array
-    - Vector store: Data base of number vectors
-    - Retrieval: Semantic search in the vector store by prompt
+    - Document Loading: In this stage, data is loaded from different sources, such as PDFs, CSVs, or databases. LangChain offers various tools to facilitate this process.
+    - Document Splitting: The loaded data is divided into smaller chunks. This splitting should be done intelligently to preserve context and ensure that relevant information is maintained.
+    - Embedding: The text chunks are converted into numerical vectors. This transformation is crucial for enabling semantic comparisons between texts, making it easier to retrieve relevant information.
+    - Storage in VectorStore: The generated vectors are stored in a specific database for vectors, called VectorStore. This allows for efficient information retrieval.
+    - Retrieval: When a user asks a question, a vector corresponding to the query is generated and compared with the vectors stored in the VectorStore. The closest texts are retrieved and used to generate a personalized response.

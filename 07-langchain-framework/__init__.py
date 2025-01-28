@@ -34,7 +34,11 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.rag.a_document_loaders.load_from_website import execute
 # from scripts.rag.a_document_loaders.load_from_notion import execute
 
-from scripts.rag.b_text_splitters.text_splitter import execute
+# from scripts.rag.b_text_splitters.character_text_splitter import execute
+# from scripts.rag.b_text_splitters.recursice_character_text_splitter import execute
+# from scripts.rag.b_text_splitters.token_text_splitter import execute
+# from scripts.rag.b_text_splitters.markdown_header_text_splitter import execute
+from scripts.rag.b_text_splitters.document_splitter import execute
 
 _ = load_dotenv(find_dotenv())
 
