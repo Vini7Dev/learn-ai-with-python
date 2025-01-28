@@ -38,7 +38,10 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.rag.b_text_splitters.recursice_character_text_splitter import execute
 # from scripts.rag.b_text_splitters.token_text_splitter import execute
 # from scripts.rag.b_text_splitters.markdown_header_text_splitter import execute
-from scripts.rag.b_text_splitters.document_splitter import execute
+# from scripts.rag.b_text_splitters.document_splitter import execute
+
+# from scripts.rag.c_embeddings.openai_documents_embedding import execute
+from scripts.rag.c_embeddings.hugging_face_embedding import execute
 
 _ = load_dotenv(find_dotenv())
 
