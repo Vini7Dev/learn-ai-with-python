@@ -7,7 +7,7 @@ from langchain.retrievers.self_query.base import SelfQueryRetriever
 from langchain.chains.query_constructor.schema import AttributeInfo
 
 def execute(action = 'SEARCH'):
-    store_directory = 'files/retrieval_chrome_vector_store'
+    store_directory = 'files/retrieval_chroma_vector_store'
 
     embeddings_model = OpenAIEmbeddings(model='text-embedding-ada-002')
 

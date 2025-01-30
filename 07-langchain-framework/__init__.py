@@ -25,6 +25,7 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.chains.simple_sequential_chain import execute
 # from scripts.chains.sequential_chain import execute
 # from scripts.chains.complex_prompt_sequential_chain import execute
+# from scripts.chains.chain_type_param import execute
 
 # from scripts.chain_router.router_chains import execute
 
@@ -47,7 +48,10 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.rag.d_vector_stores.faiss_vector_storage import execute
 
 # from scripts.rag.e_retrieval.retrieval import execute
-from scripts.rag.e_retrieval.retrieval_with_llms import execute
+# from scripts.rag.e_retrieval.retrieval_with_llms import execute
+
+# from scripts.rag.__apps__.simple_app import execute
+from scripts.rag.__apps__.modify_prompt_app import execute
 
 _ = load_dotenv(find_dotenv())
 
