@@ -114,6 +114,7 @@ pip install streamlit-drawable-canvas
     - Each chain has a responsibility
     - Simplify complex prompts
     - Parallel and sequential chains
+    - Special runnables
 
 > Router Chains
     - Router that directs the query to the ideal chain

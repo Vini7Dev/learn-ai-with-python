@@ -50,7 +50,11 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.rag.e_retrieval.retrieval import execute
 # from scripts.rag.e_retrieval.retrieval_with_llms import execute
 
-from scripts.chains_and_langsmith.chain_langsmith import execute
+# from scripts.runners_and_langsmith.chain_langsmith import execute
+# from scripts.runners_and_langsmith.chain_common_runnables import execute
+# from scripts.runners_and_langsmith.chain_parallel_runnable import execute
+# from scripts.runners_and_langsmith.chain_lambda_runnable import execute
+from scripts.runners_and_langsmith.chain_passthrough_runnable import execute
 
 # from scripts.rag.__apps__.simple_app import execute
 # from scripts.rag.__apps__.modify_prompt_app import execute
