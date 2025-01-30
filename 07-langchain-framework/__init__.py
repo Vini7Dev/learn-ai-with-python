@@ -27,7 +27,8 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.chains.complex_prompt_sequential_chain import execute
 # from scripts.chains.chain_type_param import execute
 
-# from scripts.chain_router.router_chains import execute
+# from scripts.chain_router.old_router_chains import execute
+from scripts.chain_router.router_chains import execute
 
 # from scripts.rag.a_document_loaders.load_pdf import execute
 # from scripts.rag.a_document_loaders.load_csv import execute
@@ -54,7 +55,7 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.runners_and_langsmith.chain_common_runnables import execute
 # from scripts.runners_and_langsmith.chain_parallel_runnable import execute
 # from scripts.runners_and_langsmith.chain_lambda_runnable import execute
-from scripts.runners_and_langsmith.chain_passthrough_runnable import execute
+# from scripts.runners_and_langsmith.chain_passthrough_runnable import execute
 
 # from scripts.rag.__apps__.simple_app import execute
 # from scripts.rag.__apps__.modify_prompt_app import execute

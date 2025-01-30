@@ -1,31 +1,35 @@
-from langchain.chains.router.multi_prompt_prompt import MULTI_PROMPT_ROUTER_TEMPLATE
-from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
-from langchain.chains.router import MultiPromptChain
-from langchain.chains.llm import LLMChain
-from langchain.prompts import ChatPromptTemplate, PromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain.prompts import ChatPromptTemplate
 from langchain_openai.chat_models import ChatOpenAI
+from pydantic import BaseModel, Field
+
+class Categorizator(BaseModel):
+    '''Categoriza as perguntas de alunos do ensino fundamental'''
+    area: str = Field(description='A área de conhecimento da pergunta feita pelo aluno. \
+                      Deve ser "física", "matemática" ou "história". Caso não se encaixe \
+                      em nenhuma delas, retorne "outra".')
 
 def execute():
-    chat = ChatOpenAI(model='gpt-3.5-turbo-0125')
+    chat_model = ChatOpenAI(model='gpt-4o-mini')
 
-    phys_template = ChatPromptTemplate.from_template('''Você é um professor de física muito inteligente.
+    phys_prompt = ChatPromptTemplate.from_template('''Você é um professor de física muito inteligente.
     Você é ótimo em responder perguntas sobre física de forma concisa
     e fácil de entender.
     Quando você não sabe a resposta para uma pergunta, você admite
     que não sabe.
 
-    Aqui está uma pergunta: {input}''')
+    Aqui está uma pergunta: {question}''')
 
-    math_template = ChatPromptTemplate.from_template('''Você é um matemático muito bom.
+    math_prompt = ChatPromptTemplate.from_template('''Você é um matemático muito bom.
     Você é ótimo em responder perguntas de matemática.
     Você é tão bom porque consegue decompor
     problemas difíceis em suas partes componentes,
     responder às partes componentes e depois juntá-las
     para responder à pergunta mais ampla.
 
-    Aqui está uma pergunta: {input}''')
+    Aqui está uma pergunta: {question}''')
 
-    hist_template = ChatPromptTemplate.from_template('''Você é um historiador muito bom.
+    hist_prompt = ChatPromptTemplate.from_template('''Você é um historiador muito bom.
     Você tem um excelente conhecimento e compreensão de pessoas,
     eventos e contextos de uma variedade de períodos históricos.
     Você tem a capacidade de pensar, refletir, debater, discutir e
@@ -33,55 +37,30 @@ def execute():
     e a capacidade de usá-la para apoiar suas explicações
     e julgamentos.
 
-    Aqui está uma pergunta: {input}''')
+    Aqui está uma pergunta: {question}''')
 
-    prompt_infos = [
-        {'name': 'Física',
-         'description': 'Ideal para responder perguntas sobre física.',
-         'prompt_template': phys_template},
-        {'name': 'Matemática',
-         'description': 'Ideal para responder perguntas sobre matemática.',
-         'prompt_template': math_template},
-        {'name': 'História',
-         'description': 'Ideal para responder perguntas sobre história.',
-         'prompt_template': hist_template},
-    ]
+    default_prompt = ChatPromptTemplate.from_template('''{question}''')
 
-    destination_chains = {}
-    for prompt_info in prompt_infos:
-        chain = LLMChain(
-            llm=chat,
-            prompt=prompt_info['prompt_template'],
-            verbose=True,
-        )
-        destination_chains[prompt_info['name']] = chain
+    phys_chain = phys_prompt | chat_model
+    math_chain = math_prompt | chat_model
+    hist_chain = hist_prompt | chat_model
+    default_chain = default_prompt | chat_model
 
-    destinations = [f'{p['name']}: {p['description']}' for p in prompt_infos]
-    destinations_str = '\n'.join(destinations)
+    def router(input):
+        if input['category'].area == 'matemática':
+            return math_chain
+        if input['category'].area == 'física':
+            return phys_chain
+        if input['category'].area == 'história':
+            return hist_chain
+        return default_chain
 
-    router_template = MULTI_PROMPT_ROUTER_TEMPLATE.format(destinations=destinations_str)
-    router_template = PromptTemplate(
-        template=router_template,
-        input_variables=['input'],
-        output_parser=RouterOutputParser()
-    )
-    router_chain = LLMRouterChain.from_llm(chat, router_template, verbose=True)
+    categorizer_prompt = ChatPromptTemplate.from_template('Você deve categorizar a seguinte pergunta: {question}')
 
-    default_prompt = ChatPromptTemplate.from_template('{input}')
-    default_chain = LLMChain(llm=chat, prompt=default_prompt, verbose=True)
+    struct_model = categorizer_prompt | chat_model.with_structured_output(Categorizator)
+    # response = struct_model.invoke('Quanto é 1 + 1?')
 
-    main_chain = MultiPromptChain(
-        router_chain=router_chain,
-        destination_chains=destination_chains,
-        default_chain=default_chain,
-        verbose=True,
-    )
+    chain = RunnablePassthrough().assign(category=struct_model) | router
+    response = chain.invoke({ 'question': 'Quando foi a independência do Brasil?' })
 
-    response = main_chain.invoke({ 'input': 'O que é um buraco negro?' })
-    print(f'Resposta: {response}')
-
-    response = main_chain.invoke({ 'input': 'O que é uma equação quadrática?' })
-    print(f'Resposta: {response}')
-
-    response = main_chain.invoke({ 'input': 'Quando foi a revolução industrial?' })
     print(f'Resposta: {response}')
