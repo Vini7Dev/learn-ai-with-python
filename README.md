@@ -118,6 +118,8 @@ pip install streamlit-drawable-canvas
 > Router Chains
     - Router that directs the query to the ideal chain
 
+> LangSmith
+
 > RAG: Retrieval Argumented Generation
     - Document Loading: In this stage, data is loaded from different sources, such as PDFs, CSVs, or databases. LangChain offers various tools to facilitate this process.
     - Document Splitting: The loaded data is divided into smaller chunks. This splitting should be done intelligently to preserve context and ensure that relevant information is maintained.
