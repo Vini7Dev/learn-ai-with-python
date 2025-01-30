@@ -51,7 +51,8 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.rag.e_retrieval.retrieval_with_llms import execute
 
 # from scripts.rag.__apps__.simple_app import execute
-from scripts.rag.__apps__.modify_prompt_app import execute
+# from scripts.rag.__apps__.modify_prompt_app import execute
+from scripts.rag.__apps__.pipeline_app import execute
 
 _ = load_dotenv(find_dotenv())
 
