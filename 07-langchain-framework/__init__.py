@@ -19,6 +19,7 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.memories.memory_conversation_buffer_window import execute
 # from scripts.memories.memory_conversation_token_buffer import execute
 # from scripts.memories.memory_conversation_summary_buffer import execute
+from scripts.memories.in_memory_chat_message_history import execute
 
 # from scripts.chains.conversation_chain import execute
 # from scripts.chains.llm_chain import execute
@@ -28,7 +29,7 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.chains.chain_type_param import execute
 
 # from scripts.chain_router.old_router_chains import execute
-from scripts.chain_router.router_chains import execute
+# from scripts.chain_router.router_chains import execute
 
 # from scripts.rag.a_document_loaders.load_pdf import execute
 # from scripts.rag.a_document_loaders.load_csv import execute
