@@ -16,7 +16,7 @@ def inicialization():
 def main_page():
     messages = load_messages(st.session_state.messages)
 
-    st.header('Asimov Chatbot', divider=True)
+    st.header('My Chatbot', divider=True)
 
     for message in messages:
         chat = st.chat_message(message['role'])

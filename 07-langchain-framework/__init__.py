@@ -19,7 +19,7 @@ from dotenv import load_dotenv, find_dotenv
 # from scripts.memories.memory_conversation_buffer_window import execute
 # from scripts.memories.memory_conversation_token_buffer import execute
 # from scripts.memories.memory_conversation_summary_buffer import execute
-from scripts.memories.in_memory_chat_message_history import execute
+# from scripts.memories.in_memory_chat_message_history import execute
 
 # from scripts.chains.conversation_chain import execute
 # from scripts.chains.llm_chain import execute
@@ -60,7 +60,7 @@ from scripts.memories.in_memory_chat_message_history import execute
 
 # from scripts.rag.__apps__.simple_app import execute
 # from scripts.rag.__apps__.modify_prompt_app import execute
-# from scripts.rag.__apps__.pipeline_app import execute
+from scripts.rag.__apps__.pipeline_app import execute
 
 _ = load_dotenv(find_dotenv())
 
