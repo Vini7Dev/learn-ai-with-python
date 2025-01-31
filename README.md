@@ -127,3 +127,7 @@ pip install streamlit-drawable-canvas
     - Embedding: The text chunks are converted into numerical vectors. This transformation is crucial for enabling semantic comparisons between texts, making it easier to retrieve relevant information.
     - Storage in VectorStore: The generated vectors are stored in a specific database for vectors, called VectorStore. This allows for efficient information retrieval.
     - Retrieval: When a user asks a question, a vector corresponding to the query is generated and compared with the vectors stored in the VectorStore. The closest texts are retrieved and used to generate a personalized response.
+
+## 08 PDF Analyzer
+
+> Chat PDF: Chat to answer questions related to PDF files
