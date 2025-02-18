@@ -131,3 +131,14 @@ pip install streamlit-drawable-canvas
 ## 08 PDF Analyzer
 
 > Chat PDF: Chat to answer questions related to PDF files
+
+# 09 Hugging Face With Image And Audio AI
+
+> Audio classification
+
+> Audio transcription
+
+> Audio translation
+
+> Audio Generation
+    - With Optimization
