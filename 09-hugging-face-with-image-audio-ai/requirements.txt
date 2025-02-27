@@ -10,3 +10,6 @@ setuptools
 sounddevice
 accelerate
 optimum
+pillow
+opencv-python
+timm
