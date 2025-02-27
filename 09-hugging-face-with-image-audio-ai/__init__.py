@@ -13,6 +13,10 @@
 # from scripts.image.image_object_detection import execute
 # from scripts.image.image_zero_shot_object_detection import execute
 # from scripts.image.image_upscaling import execute
-from scripts.image.image_description import execute
+# from scripts.image.image_description import execute
+
+# from scripts.video.learn_about_videos import execute
+# from scripts.video.video_classification import execute
+from scripts.video.video_object_detection import execute
 
 execute()

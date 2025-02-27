@@ -135,32 +135,22 @@ pip install streamlit-drawable-canvas
 # 09 Hugging Face With Image And Audio AI
 
 > Learn About Audios
-
-> Audio Classification
-
-> Audio Zero-Shot Classification
-
-> Audio Transcription
-
-> Audio Translation
-
-> Audio Generation
-    - With Optimization
+    > Audio Classification
+    > Audio Zero-Shot Classification
+    > Audio Transcription
+    > Audio Translation
+    > Audio Generation **(With Optimization)**
 
 > Learn About Images
+    > Image Classification
+    > Image Zero-Shot Classification*
+    > Image Segmentation
+    > Image Zero-Shot Segmentation
+    > Image Object Detection
+    > Image Zero-Shot Object Detection
+    > Image Upscaling
+    > Image Description
 
-> Image Classification
-
-> Image Zero-Shot Classification*
-
-> Image Segmentation
-
-> Image Zero-Shot Segmentation
-
-> Image Object Detection
-
-> Image Zero-Shot Object Detection
-
-> Image Upscaling
-
-> Image Description
+> Learn About Videos
+    > Video Classification
+    > Video Object Detection

@@ -13,3 +13,5 @@ optimum
 pillow
 opencv-python
 timm
+decord
+av
