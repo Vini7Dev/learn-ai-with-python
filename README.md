@@ -1,4 +1,5 @@
 # Learn AI With Python
+
 Learn Python for Artificial Intelligence Applications with ASIMOV Academy
 
 ## 01 Setup Project
@@ -97,6 +98,7 @@ pip install streamlit-drawable-canvas
 ## 07 AI APPs With LangChain Framework
 
 > Models
+
     - LLMs
     - Chat Models
         - Prompt Few-Shot
@@ -108,6 +110,7 @@ pip install streamlit-drawable-canvas
 > Output Parsers
 
 > Chain
+
     - Memory: History for model conversations
     - Break problems down into smaller problems
     - Multiple chains to solve a problem of one application
@@ -117,11 +120,13 @@ pip install streamlit-drawable-canvas
     - Special runnables
 
 > Router Chains
+
     - Router that directs the query to the ideal chain
 
 > LangSmith
 
 > RAG: Retrieval Argumented Generation
+
     - Document Loading: In this stage, data is loaded from different sources, such as PDFs, CSVs, or databases. LangChain offers various tools to facilitate this process.
     - Document Splitting: The loaded data is divided into smaller chunks. This splitting should be done intelligently to preserve context and ensure that relevant information is maintained.
     - Embedding: The text chunks are converted into numerical vectors. This transformation is crucial for enabling semantic comparisons between texts, making it easier to retrieve relevant information.
@@ -135,22 +140,44 @@ pip install streamlit-drawable-canvas
 # 09 Hugging Face With Image And Audio AI
 
 > Learn About Audios
-    > Audio Classification
-    > Audio Zero-Shot Classification
-    > Audio Transcription
-    > Audio Translation
-    > Audio Generation **(With Optimization)**
+> Audio Classification
+> Audio Zero-Shot Classification
+> Audio Transcription
+> Audio Translation
+> Audio Generation **(With Optimization)**
 
 > Learn About Images
-    > Image Classification
-    > Image Zero-Shot Classification*
-    > Image Segmentation
-    > Image Zero-Shot Segmentation
-    > Image Object Detection
-    > Image Zero-Shot Object Detection
-    > Image Upscaling
-    > Image Description
+> Image Classification
+> Image Zero-Shot Classification\*
+> Image Segmentation
+> Image Zero-Shot Segmentation
+> Image Object Detection
+> Image Zero-Shot Object Detection
+> Image Upscaling
+> Image Description
 
 > Learn About Videos
-    > Video Classification
-    > Video Object Detection
+> Video Classification
+> Video Object Detection
+
+# 10 AI Agents With Python and LangChain
+
+> LCEL - LangChain Expression language
+
+| Componente   | Tipo de Entrada                                         | Tipo de Saída         |
+| ------------ | ------------------------------------------------------- | --------------------- |
+| Prompt       | Dicionário                                              | PromptValue           |
+| ChatModel    | String única, lista de mensagens de chat ou PromptValue | Mensagem de Chat      |
+| LLM          | String única, lista de mensagens de chat ou PromptValue | String                |
+| OutputParser | A saída de um LLM ou ChatModel                          | Depende do parser     |
+| Retriever    | String única                                            | Lista de Documentos   |
+| Tool         | String única ou dicionário, dependendo da ferramenta    | Depende da ferramenta |
+
+> Model External Functions
+> Tagging - Data Interpretation with Functions
+> Text Extration
+> LangChain Tools and Custom Tools
+> Agents
+> Agent Executors
+> Agent Types
+> Agent Toolkits
